@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: itsadigitalthing/johnmartins-site
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+site_url: "https://johnmartins.no"
+logo_url: "/logo.svg"
+
+collections:
+  - name: "settings"
+    label: "Settings"
+    files:
+      - file: "content/settings/site.json"
+        label: "Site Settings"
+        name: "site"
+        fields:
+          - { label: "Logo (optional)", name: "logo", widget: "image", required: false }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "Cookie Banner Text", name: "cookieText", widget: "text" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/pages/home.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Intro", name: "body", widget: "markdown", required: false }
+      - file: "content/pages/about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "content/pages/contact.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Status", name: "status", widget: "string", required: false }
+      - { label: "Cover", name: "cover", widget: "image" }
+      - { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown", required: false }

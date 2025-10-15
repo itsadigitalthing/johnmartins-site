@@ -1,3 +1,3 @@
 # About
 
-Write your studio bio here. Replace this content in the CMS.
+Write your studio bio here. Replace this content in the CMS. hey
